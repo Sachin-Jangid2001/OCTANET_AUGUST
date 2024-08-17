@@ -3,13 +3,39 @@
     padding: 0;
 
 }
-body{
-    background-color:#c4c4c6 ;
+body::before {
+    content: "";
+    background-image: url("img4.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat:repeat-y;
+    background-position: center;
+    background-size: 100%;
+    z-index: -1;
+    opacity: .4;
 }
-.todo{
+body::after {
+    content: "";
+    background-color: grey;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-repeat:repeat-y;
+    background-position: center;
+    background-size: 100%;
+    z-index: -1;
+    opacity: .5;
 }
 .container{
     padding: 50px 50px;
+}
+.container h1{
+    font-size: 3.5rem;
 }
 
 .content{
@@ -24,40 +50,33 @@ body{
     margin-bottom: 20px;
     width: 70%;
     display: flex;
+    justify-content: center;
 }
-.content input{
+.task-input{
     outline: none;
-    width: 70%;
+    width: 65%;
     margin: 0 10px;
     font-size: 18px;
     border: 0px;
     border-radius: 5px;
     padding: 5px 12px;
 }
-.add-btn,.mode-toggle{
+.add-btn{
     font-size: 18px;
     border: 1px solid black;
     border-radius: 5px;
-    padding: 5px 20px;
+    padding: 5px 30px;
     margin: 0 10px;
     background-color: #24dca8aa;
 }
-.add-btn:hover,.mode-toggle:hover {
+.add-btn:hover {
     font-size: 18px;
     border: 1px solid black;
     border-radius: 5px;
-    padding: 5px 20px;
+    padding: 5px 30px;
     margin: 0 10px;
     background-color: #00b481d8;
-    transition: 0.2s;
-}
-.add-btn,.mode-toggle{
-    font-size: 18px;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 5px 20px;
-    margin: 0 10px;
-    background-color: #24dca8aa;
+    transition: 0.3s;
 }
 .mode{
     background-color: black;
@@ -115,19 +134,26 @@ body{
     display: flex;
     list-style: none;
     align-items: center;
+    justify-content: center;
 }
 .show-task{
     width: 69%;
     padding: 5px 10px;
 }
 .li-span{
-    background-color: #80808866;
-    width: 85%;
+    border-bottom: 1px solid black;
+    width: 55%;
     padding: 5px 15px;
     font-size: 18px;
     word-wrap: break-word;
     border-radius: 5px;
     margin-right: 10px;
+    
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-style:italic;
+    font-weight: bold;
+    font-size: 25px;
    
 }
 .btns{
@@ -137,4 +163,10 @@ body{
     border-radius: 5px;
     margin: 10px;
     font-size: 18px;
+}
+.task-done{
+    /* size: 15px; */
+    height: 18px;
+    width: 18px;
+    margin: 5px;
 }
