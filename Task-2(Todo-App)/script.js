@@ -7,11 +7,11 @@ let cancel_btn = document.querySelector(".Cancel-btn");
 let edit_module = document.querySelector(".edit-card");
 let mode_btn = document.querySelector(".mode-toggle");
 
-mode_btn.onclick = () =>{
-    let body = document.body;
-    body.classList.toggle("mode");
-    // mode_fun();
-    }
+// mode_btn.onclick = () =>{
+//     let body = document.body;
+//     body.classList.toggle("mode");
+//     // mode_fun();
+//     }
 
 
 
@@ -45,8 +45,18 @@ add_btn.onclick = () => {
         deletetodospan(li);
     }
 
+    // adding the done button 
+    // let done_btn = document.createElement("check-box");
+    let checkbox = document.createElement('input');
+    checkbox.classList.add("task-done");
+    checkbox.type = "checkbox";
+    checkbox.name = "checkbox";
+    checkbox.onclick = () => {
+        taskdone(span,edit_btn,delete_btn,checkbox);
+    }
 
     // console.log(todotext);
+    li.appendChild(checkbox);
     li.appendChild(span);
     li.appendChild(edit_btn);
     li.appendChild(delete_btn);
@@ -56,6 +66,28 @@ add_btn.onclick = () => {
 
 
 }
+}
+
+
+// function of checkbxox 
+function taskdone(span,edit_btn,delete_btn,checkbox){
+    if(checkbox.checked){
+        // span.style.backgroundColor="red";
+        span.style.textDecoration="line-through";
+        edit_btn.disabled=true;
+    delete_btn.disabled=true;
+    }
+    else{
+        span.style.backgroundColor="transparent";
+        edit_btn.disabled=false;
+        delete_btn.disabled=false;
+        span.style.textDecoration="none";
+    }
+
+
+
+
+    
 }
 
 
